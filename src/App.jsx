@@ -4,8 +4,6 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from '@/components/Layout';
 import pages from '@/pages';
 
-console.log('===', pages)
-
 import routes from './routes';
 
 const NotFound = pages['404'];

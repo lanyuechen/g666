@@ -79,11 +79,11 @@ export default (props) => {
     }
   }, [options]);
 
-  useEffect(() => {
-    if (store.graph) {
-      store.graph.changeData(data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (store.graph) {
+  //     store.graph.changeData(data);
+  //   }
+  // }, [data]);
 
   return (
     <div ref={ref} />

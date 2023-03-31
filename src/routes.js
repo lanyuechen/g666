@@ -15,4 +15,9 @@ export default [
       },
     ],
   },
+  {
+    label: '树图布局',
+    route: '/tree',
+    component: 'Tree',
+  },
 ];
