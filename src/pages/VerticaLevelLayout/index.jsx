@@ -6,6 +6,7 @@ import '@/g6/layouts/column-layout';
 import '@/g6/layouts/row-layout';
 import '@/g6/layouts/float-layout';
 import '@/g6/edges/ani-cubic-horizontal';
+import '@/g6/behaviors/hover-node';
 
 import data from './data';
 const data2 = JSON.parse(JSON.stringify(data));
@@ -52,6 +53,7 @@ const parseOptions = (params) => {
         },
         'drag-node', // 拖拽节点
         'drag-combo', // 拖拽分组
+        'hover-node', 
       ],
     },
     // 节点不同状态下的样式集合
