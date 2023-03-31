@@ -8,10 +8,8 @@ export default (props) => {
   const store = useRef({}).current;
 
   useEffect(() => {
-    console.log('====', options)
     store.graph = new G6.Graph({
       ...options,
-      renderer: 'svg',
       container: ref.current,
       width: options.width || ref.current.clientWidth || 100,
       height: options.height || ref.current.clientHeight || 100,
