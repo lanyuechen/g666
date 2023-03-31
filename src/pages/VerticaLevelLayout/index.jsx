@@ -79,15 +79,10 @@ const parseOptions = (params) => {
 }
 
 function App() {
-  const optionHorizontal = useMemo(() => parseOptions({ direction: 'horizontal' }), []);
   const optionVertical = useMemo(() => parseOptions({ direction: 'vertical' }), []);
 
   return (
     <div>
-      {/* <Graph 
-        options={optionHorizontal}
-        data={data}
-      /> */}
       <Graph 
         options={optionVertical}
         data={data2}
