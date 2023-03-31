@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 import Layout from '@/components/Layout';
 import pages from '@/pages';
+import '@/g6';
 
 import routes from './routes';
 

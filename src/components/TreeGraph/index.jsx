@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import G6 from '@antv/g6';
-import { startEdgeAnimate, stopEdgeAnimate } from '@/g6/utils/utils';
 
 export default (props) => {
   const { options, data } = props;

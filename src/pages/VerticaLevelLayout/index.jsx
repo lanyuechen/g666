@@ -2,13 +2,6 @@ import { useMemo } from 'react';
 import G6 from '@antv/g6';
 import Graph from '@/components/Graph';
 
-import '@/g6/layouts/column-layout';
-import '@/g6/layouts/row-layout';
-import '@/g6/layouts/float-layout';
-import '@/g6/edges/ani-cubic-horizontal';
-import '@/g6/behaviors/hover-node';
-import '@/g6/behaviors/hover-edge';
-
 import data from './data';
 
 const parseOptions = (params) => {

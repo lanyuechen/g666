@@ -1,8 +1,6 @@
 import TreeGraph from '@/components/TreeGraph';
 import data from './data';
 
-import '@/g6/nodes/card-node';
-
 const options = {
   width: 800,
   height: 600,
