@@ -1,6 +1,7 @@
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import G6 from '@antv/g6';
 import Graph from '@/components/Graph';
+import Form from '@/components/Form';
 
 import '@/g6/layouts/column-layout';
 import '@/g6/layouts/row-layout';
@@ -10,6 +11,7 @@ import '@/g6/behaviors/hover-node';
 import '@/g6/behaviors/hover-edge';
 
 import data from './data';
+import spec from './spec';
 
 const parseOptions = (params) => {
   return {
@@ -47,15 +49,7 @@ const parseOptions = (params) => {
     },
     modes: {
       default: [
-        'drag-canvas', // 拖拽画布
-        {
-          type: 'zoom-canvas', // 缩放画布
-          sensitivity: 1,
-        },
-        'drag-node', // 拖拽节点
-        'drag-combo', // 拖拽分组
-        'hover-node', 
-        'hover-edge', 
+        ...params.behaviors,
       ],
     },
     // 节点不同状态下的样式集合
@@ -82,12 +76,27 @@ const parseOptions = (params) => {
 }
 
 function App() {
-  const optionVertical = useMemo(() => parseOptions({ direction: 'vertical' }), []);
+  const [params, setParams] = useState(Form.parseValue(spec));
+  const [options, setOptions] = useState(parseOptions(params));
+
+  const handleParamsChange = (values) => {
+    setParams(values);
+  }
+
+  useEffect(() => {
+    setOptions(parseOptions(params));
+  }, [params]);
+
 
   return (
     <div>
+      <Form
+        spec={spec}
+        value={params}
+        onChange={(values) => handleParamsChange(values)}
+      />
       <Graph 
-        options={optionVertical}
+        options={options}
         data={data}
       />
     </div>

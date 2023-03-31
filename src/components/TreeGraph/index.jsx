@@ -15,14 +15,14 @@ export default (props) => {
       height: options.height || ref.current.clientHeight || 100,
     });
 
-    store.graph.data(data);
+    store.graph.data(JSON.parse(JSON.stringify(data)));
     store.graph.render();
     store.graph.fitView();
 
     return () => {
       store.graph.destroy();
     }
-  }, [options]);
+  }, [options, data]);
 
   // useEffect(() => {
   //   if (store.graph) {

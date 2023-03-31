@@ -1,5 +1,10 @@
 export default [
   {
+    label: '自定义',
+    route: '/custom',
+    component: 'Custom',
+  },
+  {
     label: '分层布局',
     route: '/level',
     routes: [

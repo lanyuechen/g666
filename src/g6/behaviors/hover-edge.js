@@ -1,4 +1,5 @@
 import G6 from '@antv/g6';
+import { startEdgeAnimate, stopEdgeAnimate } from '@/g6/utils/utils';
 
 G6.registerBehavior('hover-edge', {
   // Bind the event and its callback
@@ -24,6 +25,7 @@ G6.registerBehavior('hover-edge', {
     nodes.forEach((node) => {
       this.graph.setItemState(node, 'running', true);
     });
+    startEdgeAnimate(edge);
   },
   /**
    * Handle the callback for mousemove
@@ -41,5 +43,6 @@ G6.registerBehavior('hover-edge', {
     nodes.forEach((node) => {
       this.graph.setItemState(node, 'running', false);
     });
+    stopEdgeAnimate(edge);
   },
 });
