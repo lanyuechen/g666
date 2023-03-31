@@ -20,4 +20,9 @@ export default [
     route: '/tree',
     component: 'Tree',
   },
+  {
+    label: '缩进树图布局',
+    route: '/indented-tree',
+    component: 'IndentedTree',
+  },
 ];
