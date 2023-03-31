@@ -1,0 +1,9 @@
+build:
+  image: node:16.15.1
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
