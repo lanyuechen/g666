@@ -7,6 +7,7 @@ import '@/g6/layouts/row-layout';
 import '@/g6/layouts/float-layout';
 import '@/g6/edges/ani-cubic-horizontal';
 import '@/g6/behaviors/hover-node';
+import '@/g6/behaviors/hover-edge';
 
 import data from './data';
 const data2 = JSON.parse(JSON.stringify(data));
@@ -38,7 +39,8 @@ const parseOptions = (params) => {
     defaultEdge: {
       type: params.direction === 'horizontal' ? 'cubic-horizontal' : 'cubic-vertical',
       style: {
-        stroke: '#ccc'
+        stroke: '#ccc',
+        lineAppendWidth: 5,
       }
     },
     defaultCombo: {
@@ -54,27 +56,27 @@ const parseOptions = (params) => {
         'drag-node', // 拖拽节点
         'drag-combo', // 拖拽分组
         'hover-node', 
+        'hover-edge', 
       ],
     },
     // 节点不同状态下的样式集合
     nodeStateStyles: {
-      // 鼠标 hover 上节点，即 hover 状态为 true 时的样式
       hover: {
         fill: 'lightsteelblue',
       },
-      // 鼠标点击节点，即 click 状态为 true 时的样式
-      click: {
-        stroke: '#000',
-      },
+      running: {
+        fill: 'lightblue',
+      }
     },
     // 边不同状态下的样式集合
     edgeStateStyles: {
-      // 鼠标点击边，即 click 状态为 true 时的样式
-      click: {
-        stroke: 'steelblue',
+      hover: {
+        stroke: 'lightsteelblue',
+        lineWidth: 3,
       },
       running: {
-        stroke: '#888',
+        stroke: 'lightblue',
+        lineWidth: 3,
       }
     },
   };
