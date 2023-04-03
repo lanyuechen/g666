@@ -1,5 +1,6 @@
 const data = [
-  ["", "", "100GE1/0/20", "10.122.242.200", "100GE1/0/20", "0.0.0.0"],
+  ["", "", "", "", "100GE1/0/20", "1.1.1.1", "100GE1/0/21", "0.0.0.0"],
+  ["", "", "100GE1/0/20", "10.122.242.200", "100GE1/0/21", "1.1.1.1"],
   ["110.118.5.159", "10.118.101.159-eth10-NIC-HDR1", "100GE1/0/21", "10.122.242.200"],
   ["110.118.5.160", "10.118.101.160-eth10-NIC-HDR1", "100GE1/0/22", ""],
   ["110.118.5.161", "10.118.101.161-eth10-NIC-HDR1", "100GE1/0/23", ""],
@@ -20,11 +21,11 @@ const data = [
   // ["110.118.5.176", "10.118.101.176-eth10-NIC-HDR1", "400GE1/0/6", ""],
   // ["110.118.5.177", "10.118.101.177-eth10-NIC-HDR1", "400GE1/0/7", ""],
   // ["110.118.5.178", "10.118.101.178-eth10-NIC-HDR1", "400GE1/0/8", ""],
-  ["", "", "100GE1/0/20", "10.122.242.201", "100GE1/0/21", "0.0.0.0"],
+  ["", "", "100GE1/0/20", "10.122.242.201", "100GE1/0/22", "1.1.1.1"],
   ["110.118.5.159", "10.118.133.159-eth11-NIC-HDR2", "100GE1/0/21", "10.122.242.201"],
   ["110.118.5.160", "10.118.133.160-eth11-NIC-HDR2", "100GE1/0/22", ""],
   ["110.118.5.161", "10.118.133.161-eth11-NIC-HDR2", "100GE1/0/23", ""],
-  // ["110.118.5.162", "10.118.133.162-eth11-NIC-HDR2", "100GE1/0/24", ""],
+  ["110.118.5.162", "10.118.133.162-eth11-NIC-HDR2", "100GE1/0/24", ""],
   // ["110.118.5.163", "10.118.133.163-eth11-NIC-HDR2", "100GE1/0/25", ""],
   // ["110.118.5.164", "10.118.133.164-eth11-NIC-HDR2", "100GE1/0/26", ""],
   // ["110.118.5.165", "10.118.133.165-eth11-NIC-HDR2", "100GE1/0/27", ""],
@@ -41,6 +42,49 @@ const data = [
   // ["110.118.5.176", "10.118.133.176-eth11-NIC-HDR2", "400GE1/0/6", ""],
   // ["110.118.5.177", "10.118.133.177-eth11-NIC-HDR2", "400GE1/0/7", ""],
   // ["110.118.5.178", "10.118.133.178-eth11-NIC-HDR2", "400GE1/0/8", ""],
+  ["", "", "", "", "100GE1/0/20", "2.2.2.2", "100GE1/0/22", "0.0.0.0"],
+  ["", "", "100GE1/0/20", "10.122.242.202", "100GE1/0/21", "2.2.2.2"],
+  ["110.118.5.179", "10.118.101.179-eth10-NIC-HDR1", "100GE1/0/21", "10.122.242.202"],
+  ["110.118.5.180", "10.118.101.180-eth10-NIC-HDR1", "100GE1/0/22", ""],
+  ["110.118.5.181", "10.118.101.181-eth10-NIC-HDR1", "100GE1/0/23", ""],
+  ["110.118.5.182", "10.118.101.182-eth10-NIC-HDR1", "100GE1/0/24", ""],
+  // ["110.118.5.183", "10.118.101.183-eth10-NIC-HDR1", "100GE1/0/25", ""],
+  // ["110.118.5.184", "10.118.101.184-eth10-NIC-HDR1", "100GE1/0/26", ""],
+  // ["110.118.5.185", "10.118.101.185-eth10-NIC-HDR1", "100GE1/0/27", ""],
+  // ["110.118.5.186", "10.118.101.186-eth10-NIC-HDR1", "100GE1/0/28", ""],
+  // ["110.118.5.187", "10.118.101.187-eth10-NIC-HDR1", "100GE1/0/29", ""],
+  // ["110.118.5.188", "10.118.101.188-eth10-NIC-HDR1", "100GE1/0/30", ""],
+  // ["110.118.5.189", "10.118.101.189-eth10-NIC-HDR1", "100GE1/0/31", ""],
+  // ["110.118.5.190", "10.118.101.190-eth10-NIC-HDR1", "100GE1/0/32", ""],
+  // ["110.118.5.191", "10.118.101.191-eth10-NIC-HDR1", "400GE1/0/1", ""],
+  // ["110.118.5.192", "10.118.101.192-eth10-NIC-HDR1", "400GE1/0/2", ""],
+  // ["110.118.5.193", "10.118.101.193-eth10-NIC-HDR1", "400GE1/0/3", ""],
+  // ["110.118.5.194", "10.118.101.194-eth10-NIC-HDR1", "400GE1/0/4", ""],
+  // ["110.118.7.128", "10.118.103.128-eth10-NIC-HDR1", "400GE1/0/5", ""],
+  // ["110.118.7.129", "10.118.103.129-eth10-NIC-HDR1", "400GE1/0/6", ""],
+  // ["110.118.7.130", "10.118.103.130-eth10-NIC-HDR1", "400GE1/0/7", ""],
+  // ["110.118.7.131", "10.118.103.131-eth10-NIC-HDR1", "400GE1/0/8", ""],
+  ["", "", "100GE1/0/20", "10.122.242.203", "100GE1/0/22", "2.2.2.2"],
+  ["110.118.5.179", "10.118.133.179-eth11-NIC-HDR2", "100GE1/0/21", "10.122.242.203"],
+  ["110.118.5.180", "10.118.133.180-eth11-NIC-HDR2", "100GE1/0/22", ""],
+  ["110.118.5.181", "10.118.133.181-eth11-NIC-HDR2", "100GE1/0/23", ""],
+  ["110.118.5.182", "10.118.133.182-eth11-NIC-HDR2", "100GE1/0/24", ""],
+  // ["110.118.5.183", "10.118.133.183-eth11-NIC-HDR2", "100GE1/0/25", ""],
+  // ["110.118.5.184", "10.118.133.184-eth11-NIC-HDR2", "100GE1/0/26", ""],
+  // ["110.118.5.185", "10.118.133.185-eth11-NIC-HDR2", "100GE1/0/27", ""],
+  // ["110.118.5.186", "10.118.133.186-eth11-NIC-HDR2", "100GE1/0/28", ""],
+  // ["110.118.5.187", "10.118.133.187-eth11-NIC-HDR2", "100GE1/0/29", ""],
+  // ["110.118.5.188", "10.118.133.188-eth11-NIC-HDR2", "100GE1/0/30", ""],
+  // ["110.118.5.189", "10.118.133.189-eth11-NIC-HDR2", "100GE1/0/31", ""],
+  // ["110.118.5.190", "10.118.133.190-eth11-NIC-HDR2", "100GE1/0/32", ""],
+  // ["110.118.5.191", "10.118.133.191-eth11-NIC-HDR2", "400GE1/0/1", ""],
+  // ["110.118.5.192", "10.118.133.192-eth11-NIC-HDR2", "400GE1/0/2", ""],
+  // ["110.118.5.193", "10.118.133.193-eth11-NIC-HDR2", "400GE1/0/3", ""],
+  // ["110.118.5.194", "10.118.133.194-eth11-NIC-HDR2", "400GE1/0/4", ""],
+  // ["110.118.7.128", "10.118.135.128-eth11-NIC-HDR2", "400GE1/0/5", ""],
+  // ["110.118.7.129", "10.118.135.129-eth11-NIC-HDR2", "400GE1/0/6", ""],
+  // ["110.118.7.130", "10.118.135.130-eth11-NIC-HDR2", "400GE1/0/7", ""],
+  // ["110.118.7.131", "10.118.135.131-eth11-NIC-HDR2", "400GE1/0/8", ""],
 ]
 
 const parseData = (data) => {
@@ -49,30 +93,39 @@ const parseData = (data) => {
   const combos = {};
 
   let lastSwitch = '';
-  data.forEach(([host, nc, port, sw, port0, sw0]) => {
+  data.forEach(([host, nc, port, sw, port1, sw1, port0, sw0]) => {
     lastSwitch = sw || lastSwitch;
 
     if (sw0) {
       nodes.push({
         id: `${sw0}-${port0}`,
-        label: port0,
+        label: port0.split('/').pop(),
+        originLabel: port0,
         comboId: sw0,
-        group: sw0,
         style: {
           fill: 'orange',
-          stroke: 'orange',
-          fillOpacity: 0.2,
+          stroke: 'orangered',
         },
-      },
-      {
-        id: `${lastSwitch}-${port}`,
-        label: port,
-        comboId: lastSwitch,
-        group: lastSwitch,
+        stateStyles: {
+          highlight: {
+            fill: 'orange',
+            stroke: 'black',
+          },
+        },
+      }, {
+        id: `${sw1}-${port1}`,
+        label: port1.split('/').pop(),
+        originLabel: port1,
+        comboId: sw1,
         style: {
           fill: 'orange',
-          stroke: 'orange',
-          fillOpacity: 0.2,
+          stroke: 'orangered',
+        },
+        stateStyles: {
+          highlight: {
+            fill: 'orange',
+            stroke: 'black',
+          },
         },
       });
       combos[sw0] = {
@@ -83,6 +136,50 @@ const parseData = (data) => {
       }
       edges.push({
         source: `${sw0}-${port0}`,
+        target: `${sw1}-${port1}`,
+      });
+      return;
+    } else if (sw1) {
+      nodes.push({
+        id: `${sw1}-${port1}`,
+        label: port1.split('/').pop(),
+        originLabel: port1,
+        comboId: sw1,
+        style: {
+          fill: 'lightgreen',
+          stroke: 'green',
+        },
+        stateStyles: {
+          highlight: {
+            fill: 'lightgreen',
+            stroke: 'black',
+          },
+        },
+      },
+      {
+        id: `${lastSwitch}-${port}`,
+        label: port.split('/').pop(),
+        originLabel: port,
+        comboId: lastSwitch,
+        style: {
+          fill: 'lightgreen',
+          stroke: 'green',
+        },
+        stateStyles: {
+          highlight: {
+            fill: 'lightgreen',
+            stroke: 'black',
+          },
+        },
+      });
+      combos[sw1] = {
+        id: sw1,
+        level: 1,
+        label: sw1,
+        padding: [30, 20, 20, 20],
+      }
+      edges.push({
+        source: `${sw1}-${port1}`,
         target: `${lastSwitch}-${port}`,
       });
       return;
@@ -90,34 +187,34 @@ const parseData = (data) => {
 
     nodes.push({
       id: `${host}-${nc}`,
-      label: nc.match(/eth\d+/i)[0] || nc,
+      label: nc.match(/eth(\d+)/i)[1] || nc,
+      originLabel: nc,
       comboId: host,
-      group: host,
     });
 
     nodes.push({
       id: `${lastSwitch}-${port}`,
-      label: port,
+      label: port.split('/').pop(),
+      originLabel: port,
       comboId: lastSwitch,
-      group: lastSwitch,
     });
 
     edges.push({
-      source: `${host}-${nc}`,
-      target: `${lastSwitch}-${port}`,
+      source: `${lastSwitch}-${port}`,
+      target: `${host}-${nc}`,
     });
-
-    combos[host] = {
-      id: host,
-      level: 2,
-      label: host,
-      padding: [30, 20, 20, 20],
-    }
 
     combos[lastSwitch] = {
       id: lastSwitch,
-      level: 1,
+      level: 2,
       label: lastSwitch,
+      padding: [30, 20, 20, 20],
+    }
+
+    combos[host] = {
+      id: host,
+      level: 3,
+      label: host,
       padding: [30, 20, 20, 20],
     }
   });

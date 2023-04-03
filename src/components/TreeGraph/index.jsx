@@ -30,6 +30,6 @@ export default (props) => {
   // }, [data]);
 
   return (
-    <div ref={ref} />
+    <div ref={ref} style={{position: 'relative'}} />
   );
 }

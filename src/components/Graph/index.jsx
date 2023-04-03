@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import G6 from '@antv/g6';
 
 export default (props) => {
-  const { options, data } = props;
+  const { options, data, style } = props;
   const ref = useRef();
   const store = useRef({}).current;
 
@@ -29,6 +29,6 @@ export default (props) => {
   // }, [data]);
 
   return (
-    <div ref={ref} />
+    <div ref={ref} style={{position: 'relative', ...(style || {})}} />
   );
 }

@@ -4,32 +4,29 @@ import Graph from '@/components/Graph';
 
 import data from './data';
 
-const parseOptions = (params) => {
+import './style.css';
+
+const parseOptions = () => {
   return {
-    width: 800,
-    height: 600,
+    // width: 800,
+    // height: 600,
     layout: {
       type: 'comboCombined',
-      outerLayout: new G6.Layout[params.direction === 'horizontal' ? 'column-layout' : 'row-layout'](),
+      outerLayout: new G6.Layout['row-layout'](),
       innerLayout: new G6.Layout['float-layout']({
-        direction: params.direction === 'horizontal' ? 'vertical' : 'horizontal',
+        direction: 'horizontal',
       }),
     },
     defaultNode: {
       type: 'rect',
-      size: params.direction === 'horizontal' ? [100, 30] : [30, 100],
-      anchorPoints: params.direction === 'horizontal' ? undefined : [
+      size: [30, 30],
+      anchorPoints: [
         [0.5, 0],
         [0.5, 1],
       ],
-      labelCfg: params.direction === 'horizontal' ? undefined : {
-        style: {
-          matrix: [0, 1, 0, -1, 0, 0, 0, 0, 1], // 旋转
-        },
-      },
     },
     defaultEdge: {
-      type: params.direction === 'horizontal' ? 'cubic-horizontal' : 'cubic-vertical',
+      type: 'cubic-vertical',
       style: {
         stroke: '#ccc',
         lineAppendWidth: 5,
@@ -41,14 +38,18 @@ const parseOptions = (params) => {
     modes: {
       default: [
         'drag-canvas', // 拖拽画布
-        {
-          type: 'zoom-canvas', // 缩放画布
-          sensitivity: 1,
-        },
-        'drag-node', // 拖拽节点
-        'drag-combo', // 拖拽分组
+        'zoom-canvas', // 缩放画布
         'hover-node', 
         'hover-edge', 
+        'click-node',
+        {
+          type: 'tooltip', // 提示框
+          formatText(model) {
+            // 提示框文本内容
+            const text = model.originLabel;
+            return text;
+          },
+        },
       ],
     },
     // 节点不同状态下的样式集合
@@ -58,7 +59,13 @@ const parseOptions = (params) => {
       },
       running: {
         fill: 'lightblue',
-      }
+      },
+      click: {
+        fill: 'lightblue',
+      },
+      highlight: {
+        stroke: 'black',
+      },
     },
     // 边不同状态下的样式集合
     edgeStateStyles: {
@@ -69,21 +76,26 @@ const parseOptions = (params) => {
       running: {
         stroke: 'lightblue',
         lineWidth: 3,
-      }
+      },
+      highlight: {
+        stroke: 'black',
+        lineWidth: 3,
+      },
     },
   };
 }
 
 function App() {
-  const optionVertical = useMemo(() => parseOptions({ direction: 'vertical' }), []);
+  const optionVertical = useMemo(() => parseOptions(), []);
 
   return (
-    <div>
-      <Graph 
-        options={optionVertical}
-        data={data}
-      />
-    </div>
+    <Graph 
+      options={optionVertical}
+      data={data}
+      style={{
+        height: '100%',
+      }}
+    />
   );
 }
 

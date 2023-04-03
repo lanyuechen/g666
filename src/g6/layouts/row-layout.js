@@ -8,7 +8,7 @@ const parseOffsets = (nodes, nodeSep) => {
     const padding = typeof node.padding === 'number'
       ? [node.padding, node.padding, node.padding, node.padding]
       : (node.padding || [25, 20, 15, 20]);
-
+    
     const contentSize = node.children ? node.children.length * 30 : 0;
     const size = padding[1] + padding[3] + contentSize;
     offsets.push(lastOffset + padding[1] + node.children.length * 30 / 2);
