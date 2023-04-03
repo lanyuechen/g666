@@ -13,9 +13,13 @@ const parseOptions = () => {
     layout: {
       type: 'comboCombined',
       outerLayout: new G6.Layout['row-layout'](),
-      innerLayout: new G6.Layout['float-layout']({
-        direction: 'horizontal',
+      innerLayout: new G6.Layout['grid-layout']({
+        cols: 11,
       }),
+      // innerLayout: new G6.Layout['grid']({
+      //   condense: true,
+      //   cols: 12,
+      // }),
     },
     defaultNode: {
       type: 'rect',

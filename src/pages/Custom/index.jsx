@@ -13,8 +13,8 @@ const parseOptions = (params) => {
     layout: {
       type: 'comboCombined',
       outerLayout: new G6.Layout[params.direction === 'horizontal' ? 'column-layout' : 'row-layout'](),
-      innerLayout: new G6.Layout['float-layout']({
-        direction: params.direction === 'horizontal' ? 'vertical' : 'horizontal',
+      innerLayout: new G6.Layout['grid-layout']({
+        [params.direction === 'horizontal' ? 'cols' : 'rows']: 1,
       }),
     },
     defaultNode: {
