@@ -11,7 +11,7 @@ const parseOffsets = (nodes, nodeSep, childSize) => {
     
     const contentSize = node.children ? node.children.length * childSize : 0;
     const size = padding[1] + padding[3] + contentSize;
-    offsets.push(lastOffset + padding[1] + node.children.length * childSize / 2);
+    offsets.push(lastOffset + padding[1] + node.children?.length * childSize / 2);
     lastOffset += size + nodeSep;
   });
   const size = lastOffset - nodeSep;

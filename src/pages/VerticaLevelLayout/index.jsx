@@ -4,6 +4,8 @@ import Graph from '@/components/Graph';
 
 import data from './data';
 
+window.xxx = data;
+
 import './style.css';
 
 const parseOptions = () => {
