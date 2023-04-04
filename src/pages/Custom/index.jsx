@@ -10,12 +10,18 @@ const parseOptions = (params) => {
   return {
     width: 800,
     height: 600,
+    // layout: {
+    //   type: 'comboCombined',
+    //   outerLayout: new G6.Layout[params.direction === 'horizontal' ? 'column-layout' : 'row-layout'](),
+    //   innerLayout: new G6.Layout['grid-layout']({
+    //     [params.direction === 'horizontal' ? 'cols' : 'rows']: 1,
+    //   }),
+    // },
     layout: {
-      type: 'comboCombined',
-      outerLayout: new G6.Layout[params.direction === 'horizontal' ? 'column-layout' : 'row-layout'](),
-      innerLayout: new G6.Layout['grid-layout']({
-        [params.direction === 'horizontal' ? 'cols' : 'rows']: 1,
-      }),
+      type: 'nest-layout',
+      layouts: {
+        
+      }
     },
     defaultNode: {
       type: 'rect',

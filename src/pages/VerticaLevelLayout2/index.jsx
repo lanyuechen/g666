@@ -4,6 +4,8 @@ import Graph from '@/components/Graph';
 
 import data from './data';
 
+console.log('====', data);
+
 import './style.css';
 
 const parseOptions = () => {
@@ -12,10 +14,7 @@ const parseOptions = () => {
     // height: 600,
     layout: {
       type: 'comboCombined',
-      outerLayout: new G6.Layout['row-layout']({
-        biSep: 200,
-        childSize: 40,
-      }),
+      outerLayout: new G6.Layout['row-layout'](),
       innerLayout: new G6.Layout['grid-layout']({
         cols: 11,
         sep: 10,
@@ -29,16 +28,14 @@ const parseOptions = () => {
       type: 'rect',
       size: [30, 30],
       anchorPoints: [
-        [0.5, 0], // 上
-        [1, 0.5], // 右
-        [0.5, 1], // 下
-        [0, 0.5], // 左
+        [0.5, 0],
+        [0.5, 1],
       ],
     },
     defaultEdge: {
       type: 'cubic-vertical',
       style: {
-        stroke: '#aaa',
+        stroke: '#ccc',
         lineAppendWidth: 5,
       }
     },

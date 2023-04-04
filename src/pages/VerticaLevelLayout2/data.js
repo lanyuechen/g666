@@ -137,7 +137,6 @@ const parseData = (data) => {
       edges.push({
         source: `${sw0}-${port0}`,
         target: `${sw1}-${port1}`,
-        targetAnchor: 0,
       });
       return;
     } else if (sw1) {
@@ -182,7 +181,6 @@ const parseData = (data) => {
       edges.push({
         source: `${sw1}-${port1}`,
         target: `${lastSwitch}-${port}`,
-        targetAnchor: 0,
       });
       return;
     }
@@ -204,7 +202,6 @@ const parseData = (data) => {
     edges.push({
       source: `${lastSwitch}-${port}`,
       target: `${host}-${nc}`,
-      targetAnchor: 0,
     });
 
     combos[lastSwitch] = {
@@ -221,24 +218,6 @@ const parseData = (data) => {
       padding: [30, 20, 20, 20],
     }
   });
-
-  const sourceAnchorLeft = [];
-  Object.values(combos).forEach(combo => {
-    const fNodes = nodes.filter(d => d.comboId === combo.id);
-    if (fNodes.length > 11) {
-      for (let i = 0; i < 11; i++) {
-        sourceAnchorLeft.push(fNodes[i].id)
-      }
-    }
-  });
-
-  edges.forEach(edge => {
-    if (sourceAnchorLeft.includes(edge.source)) {
-      edge.type = 'sw-line';
-      edge.sourceAnchor = 3;
-    }
-    edge.targetAnchor = 0;
-  })
 
  return { nodes, edges, combos: Object.values(combos) };
 }

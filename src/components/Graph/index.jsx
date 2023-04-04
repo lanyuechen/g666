@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import G6 from '@antv/g6';
 
 export default (props) => {
-  const { options, data, style } = props;
+  const { options, data, style, onLoad } = props;
   const ref = useRef();
   const store = useRef({}).current;
 
@@ -16,6 +16,7 @@ export default (props) => {
 
     store.graph.data(JSON.parse(JSON.stringify(data)));
     store.graph.render();
+    onLoad?.(store.graph);
 
     return () => {
       store.graph.destroy();
